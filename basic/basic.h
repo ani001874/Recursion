@@ -65,16 +65,17 @@ inline void printVector(const std::vector<int>& v) {
 
 
 inline void print2DVector(std::vector<std::vector<int> >& v) {
-    for (auto & i : v) {
+    for (int i = 0; i < v.size(); i++) {
         std::cout << "[";
-        for (int j = 0; j < i.size(); j++) {
-            std::cout << i[j];
-            if (j != i.size() - 1) std::cout << ",";
+        for (int j = 0; j < v[i].size(); j++) {
+            std::cout << v[i][j];
+            if (j != v[i].size() - 1) std::cout << ",";
         }
         std::cout << "], ";
+        if ((i+1) % 6 == 0) std::cout << std::endl;
     }
 
-    std::cout << std::endl;
+
 
 }
 
